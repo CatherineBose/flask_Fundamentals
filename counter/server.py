@@ -1,3 +1,5 @@
+from flask import Flask, render_template, request, redirect,session
+app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
 
 
@@ -15,16 +17,16 @@ def count_visits(): # session[key] = value
 def count_reloads():
     if 'count' in session:
         session['count'] += 2
-    else:
-        session['count'] = session['count']
+    # else:
+    #     session['count'] = session['count']
     return render_template('reload.html')
 
 @app.route('/reset')
 def reset_counter():
     if 'count' in session:
         session['count'] = 0
-    else:
-        session['count'] = session['count']
+    # else:
+    #     session['count'] = session['count']
     return render_template('reset.html')
 
 
