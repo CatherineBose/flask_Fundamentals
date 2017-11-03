@@ -1,0 +1,19 @@
+HTTP Methods
+We've touched on the basics of rendering templates and serving views. Now, let's talk more about how the HTTP request methods fit into web apps. Although there are a handful of these methods, all we'll need is the two most common:GET and POST
+
+The GET Method
+Any time you visit a website and a page loads in response you're seeing the HTTP GET Method in action! The GET method is used to request (or get) information from a server. When you type in the URL of the desired website you are sending a request to that server to retrieve data which comes back as the page you see. The page is the response that has been packaged and returned to your browser in the form of HTML, CSS, and Javascript. So far all of our routes have been for GET requests.
+
+We can also use GET requests with forms when we want to pass insensitive information to a server through the URL. One common example of this is search engines, such as Google. Say we went to google, filled out the search box (which is a form), and searched for "ninjas". The resulting URL you will see in your browser might look something like this:
+
+https://www.google.com/?gws_rd=ssl#q=ninjas
+Here, we sent a GET request through the search form to the Google server and we sent some information with the characters following the question mark in the URL. Keeping it simple for now, that string of characters is passing information to tell the server to use a more secure version of the google website and also ninjas which is the term we searched for. Using a GET was fine for this search and is useful when we want to either bookmark or save our search in our browser history.
+
+The POST Method
+Now imagine you were signing into your email and we used a GET method. How horrible would it be if you submitted the login form and your username and password were displayed in your URL - anyone could see it! What's even worse than that would be your information saved/cached in your browser history!
+
+POST To the Rescue
+Now to protect this information, we'll use a POST request which passes data behind the scenes in the HTTP request message body. These requests are never cached, not saved in your history, can't be bookmarked and aren't limited to how much data that can be sent. The vast majority of forms you'll be dealing with will use POST requests to send data. In general, forms should always be sent using the POST method unless you will need to give users the ability to preserve a query string, as in a Google search. Move to the next tab to see how we can apply this to Flask.
+
+Other HTTP Methods
+You may have noticed that we have mentioned some additional HTTP methods, PUT, PATCH and DELETE. These exist for the express purpose of designing API's. These are not supported methods in your HTML code, and only work when being handled by JavaScript AJAX requests. This might seem strange, but we'll learn more about why these methods exist when we talk about RESTful APIs.

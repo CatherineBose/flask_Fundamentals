@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ColorPicker</title>
+</head>
+<body style="background-color: rgb({{r}},{{g}},{{b}})">
+<!-- <body bgcolor="rgb({{r}},{{g}},{{b}})"></body> -->
+        <p>red : {{r}} </p>
+        <p>green : {{g}}</p>
+        <p>blue : {{b}}</p>
+    <form action="/colorPicker" method="post">
+        Red:<input type="text" name="red" >
+        <br>
+        Green:<input type="text" name="green" >
+        <br>
+        Blue:<input type="text" name="blue" >
+        <br>
+        <input type="submit" value="Submit">
+      </form> 
+      
+</body>
+</html>
